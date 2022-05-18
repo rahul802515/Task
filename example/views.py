@@ -1,5 +1,4 @@
 from rest_framework.generics import CreateAPIView
-from rest_framework.exceptions import APIException
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework.authentication import TokenAuthentication
 
@@ -49,7 +48,5 @@ class CreateMessageAPIView(CreateAPIView):
         return {'view':self}
 
     def perform_create(self,serializer):
-        # import pdb;
-        # pdb.set_trace()
         if serializer.is_valid(raise_exception=True):
             serializer.save()
