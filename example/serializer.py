@@ -129,7 +129,7 @@ class MessageSerializer(serializers.ModelSerializer):
         ).count()
 
         if no_of_message>=10:
-            raise serializers.ValidationError("Message Limit has been Exceed. You can insert more than 10 messages per hour.")
+            raise serializers.ValidationError("Message Limit has been Exceed. You cannot insert more than 10 messages per hour.")
         else:
             return  data
 
